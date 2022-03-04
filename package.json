@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "gatsby develop",
     "build": "gatsby build",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "gatsby": "^4.9.0",
@@ -14,6 +16,13 @@
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.3.10",
+    "@storybook/addon-essentials": "^6.3.10",
+    "@storybook/addon-knobs": "^6.4.0",
+    "@storybook/addon-links": "^6.3.10",
+    "@storybook/builder-webpack5": "^6.3.10",
+    "@storybook/manager-webpack5": "^6.3.10",
+    "@storybook/react": "^6.3.10",
     "@types/node": "^17.0.14",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
