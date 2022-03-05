@@ -11,6 +11,7 @@ function GlobalStyle() {
         }
         html,
         body {
+          margin: 0;
           font-size: 62.5%;
         }
         a {
