@@ -1,15 +1,12 @@
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
+import { CursorCoordinateType, PAGE_MOVING_SECOND } from '.';
 
-const bounce = keyframes`
+const circleAnim = keyframes`
   100% {
     transform: scale(150);
   }
 `;
-interface CursorProps {
-  x: number;
-  y: number;
-}
 
 export const Container = styled.main`
   position: relative;
@@ -43,7 +40,7 @@ export const Expression = styled.h2`
   font-family: 'Noto Serif KR', serif;
 `;
 
-export const Cursor = styled.div<CursorProps>`
+export const Cursor = styled.div<CursorCoordinateType>`
   position: absolute;
   left: ${(props) => props.x}px;
   top: ${(props) => props.y}px;
@@ -53,7 +50,7 @@ export const Cursor = styled.div<CursorProps>`
   background-color: black;
 `;
 
-export const Circle = styled.div<CursorProps>`
+export const Circle = styled.div<CursorCoordinateType>`
   position: absolute;
   left: ${(props) => props.x}px;
   top: ${(props) => props.y}px;
@@ -62,6 +59,6 @@ export const Circle = styled.div<CursorProps>`
 
   border-radius: 1.5rem;
   background-color: black;
-  animation: ${bounce} 3s linear;
+  animation: ${circleAnim} ${PAGE_MOVING_SECOND}s linear;
   animation-fill-mode: forwards;
 `;

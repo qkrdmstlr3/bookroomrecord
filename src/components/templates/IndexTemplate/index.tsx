@@ -1,21 +1,27 @@
 import React, { useState } from 'react';
+import { navigate } from 'gatsby';
 import * as Style from './styled';
 
-interface CursorCoordinateType {
+export interface CursorCoordinateType {
   x: number;
   y: number;
 }
+
+export const PAGE_MOVING_SECOND = 3;
 
 function IndexTemplate() {
   const [changingPage, setChangingPage] = useState<boolean>(false);
   const [cursorCoordinate, setCursorCoordinate] = useState<CursorCoordinateType>();
   const [currentCoordinate, setCurrentCoordinate] = useState<CursorCoordinateType>();
 
+  const movePage = () => navigate('/bookroom');
+
   const clickEvent = (event: React.MouseEvent<HTMLDivElement>) => {
     if (changingPage) return;
 
     setChangingPage(true);
     setCurrentCoordinate({ x: event.clientX, y: event.clientY });
+    setTimeout(movePage, PAGE_MOVING_SECOND * 1000);
   };
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
