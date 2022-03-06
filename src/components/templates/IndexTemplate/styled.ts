@@ -1,12 +1,25 @@
 import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react';
 
-export const Container = styled.div`
-  cursor: none;
-  display: flex;
-  padding: 3rem;
-  justify-content: space-between;
+const bounce = keyframes`
+  100% {
+    transform: scale(150);
+  }
+`;
+interface CursorProps {
+  x: number;
+  y: number;
+}
+
+export const Container = styled.main`
+  position: relative;
   width: 100vw;
   height: 100vh;
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+
+  cursor: none;
 `;
 
 export const Title = styled.h1`
@@ -28,4 +41,27 @@ export const Expression = styled.h2`
   letter-spacing: 10px;
   text-orientation: upright;
   font-family: 'Noto Serif KR', serif;
+`;
+
+export const Cursor = styled.div<CursorProps>`
+  position: absolute;
+  left: ${(props) => props.x}px;
+  top: ${(props) => props.y}px;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+  background-color: black;
+`;
+
+export const Circle = styled.div<CursorProps>`
+  position: absolute;
+  left: ${(props) => props.x}px;
+  top: ${(props) => props.y}px;
+  width: 3rem;
+  height: 3rem;
+
+  border-radius: 1.5rem;
+  background-color: black;
+  animation: ${bounce} 3s linear;
+  animation-fill-mode: forwards;
 `;
