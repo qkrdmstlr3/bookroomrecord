@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { navigate } from 'gatsby';
 import * as Style from './styled';
+import { PAGE_MOVING_SECOND } from '../../../common/variables';
 
 export interface CursorCoordinateType {
   x: number;
   y: number;
 }
-
-export const PAGE_MOVING_SECOND = 3;
 
 function IndexTemplate() {
   const [changingPage, setChangingPage] = useState<boolean>(false);

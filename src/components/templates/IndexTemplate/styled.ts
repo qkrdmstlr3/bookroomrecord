@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
-import { CursorCoordinateType, PAGE_MOVING_SECOND } from '.';
+import { CursorCoordinateType } from '.';
+import { PAGE_MOVING_SECOND } from '../../../common/variables';
 
 const circleAnim = keyframes`
   100% {
