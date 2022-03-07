@@ -63,3 +63,11 @@ export const Circle = styled.div<CursorCoordinateType>`
   animation: ${circleAnim} ${PAGE_MOVING_SECOND}s linear;
   animation-fill-mode: forwards;
 `;
+
+export const IconWrapper = styled.div`
+  position: absolute;
+  width: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;

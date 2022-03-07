@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import * as Style from './styled';
+import Icon from '../../UI/Icon';
 import useCursor from '../../../hooks/useCursor';
 import { PAGE_BOOKROOM_LOADING_SECOND } from '../../../common/variables';
 
@@ -16,7 +17,13 @@ function BookroomTemplate() {
   return (
     <Style.Container onMouseMove={handleMouseMoveEvent}>
       {cursorCoordinate && <Style.Cursor x={cursorCoordinate.x} y={cursorCoordinate.y} />}
-      {onGuard && <Style.Guard />}
+      {onGuard && (
+        <Style.Guard>
+          <Style.IconWrapper>
+            <Icon icon="book" color="#fff" />
+          </Style.IconWrapper>
+        </Style.Guard>
+      )}
       bookroom
     </Style.Container>
   );

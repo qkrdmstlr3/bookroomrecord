@@ -15,6 +15,7 @@ const guardAnim = keyframes`
 export const Container = styled.main`
   width: 100vw;
   height: 100vh;
+  position: relative;
   cursor: none;
 `;
 
@@ -34,8 +35,15 @@ export const Guard = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   background-color: black;
   animation: ${guardAnim} ${PAGE_BOOKROOM_LOADING_SECOND}s linear;
   animation-fill-mode: forwards;
+`;
+
+export const IconWrapper = styled.div`
+  width: 100px;
 `;

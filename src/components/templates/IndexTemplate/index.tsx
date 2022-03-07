@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { navigate } from 'gatsby';
 import * as Style from './styled';
+import Icon from '../../UI/Icon';
 import useCursor from '../../../hooks/useCursor';
 import { PAGE_MOVING_SECOND } from '../../../common/variables';
 
@@ -24,6 +25,9 @@ function IndexTemplate() {
       {currentClickCoordinate && <Style.Circle x={currentClickCoordinate.x} y={currentClickCoordinate.y} />}
       <Style.Title>冊房錄</Style.Title>
       <Style.Expression>전국의 책방을 여행하며</Style.Expression>
+      <Style.IconWrapper>
+        <Icon icon="book" color="#fff" />
+      </Style.IconWrapper>
     </Style.Container>
   );
 }
