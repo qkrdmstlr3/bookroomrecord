@@ -12,11 +12,15 @@ const guardAnim = keyframes`
   }
 `;
 
-export const Container = styled.main`
+interface ContainerProps {
+  onCursor: boolean;
+}
+
+export const Container = styled.main<ContainerProps>`
   width: 100vw;
   height: 100vh;
   position: relative;
-  cursor: none;
+  cursor: ${(props) => (props.onCursor ? 'initial' : 'none')};
 `;
 
 export const Cursor = styled.div<CursorCoordinateType>`

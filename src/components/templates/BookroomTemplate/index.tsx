@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import * as Style from './styled';
 import Icon from '../../UI/Icon';
-import useCursor from '../../../hooks/useCursor';
 import { PAGE_BOOKROOM_LOADING_SECOND } from '../../../common/variables';
 
 function BookroomTemplate() {
   const [onGuard, setOnGuard] = useState<boolean>(true);
-  const { cursorCoordinate, handleMouseMoveEvent } = useCursor();
 
   const removeGuard = () => setOnGuard(false);
 
@@ -15,8 +13,7 @@ function BookroomTemplate() {
   }, []);
 
   return (
-    <Style.Container onMouseMove={handleMouseMoveEvent}>
-      {cursorCoordinate && <Style.Cursor x={cursorCoordinate.x} y={cursorCoordinate.y} />}
+    <Style.Container onCursor={!onGuard}>
       {onGuard && (
         <Style.Guard>
           <Style.IconWrapper>
