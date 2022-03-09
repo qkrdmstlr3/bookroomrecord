@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      #lens {
+        fill: transparent;
+        stroke: black;
+        stroke-width: 1px;
+      }
+      #first-line {
+        transform: translate(17.5px, -30.3px);
+      }
+      #second-line {
+        transform: translate(-17.5px, 30.3px);
+      }
+      #third-line {
+        transform: translate(-17.5px, -30.3px);
+      }
+      #fourth-line {
+        transform: translate(17.5px, 30.3px);
+      }
+      #fifth-line {
+        transform: translate(-39px, 0);
+      }
+      #sixth-line {
+        transform: translate(37px, 0);
+      }
+    </style>
+    <mask id="lens-mask" maskUnits="userSpaceOnUse">
+      <circle fill="white" r="49" cx="50" cy="50" />
+    </mask>
+  </defs>
+  <circle id="lens" r="49" cx="50" cy="50" />
+  <g mask="url(#lens-mask)">
+    <path id="first-line" d='M -10 45.7 L 52.5 45.7' stroke="black" stroke-width="1px" />
+    <path id='second-line' d='M 47.5 54.3 L 110 54.3' stroke="black" stroke-width="1px" />
+
+    <path id='third-line' d='M 47.5 45.7 L 10 100' stroke="black" stroke-width="1px" />
+    <path id='fourth-line' d='M 52.5 54.3 L 87 0' stroke="black" stroke-width="1px" />
+
+    <path id='fifth-line' d='M 45 50 L 79.2 100' stroke="black" stroke-width="1px" />
+    <path id='sixth-line' d='M 55 50 L 23.7 0' stroke="black" stroke-width="1px" />
+  </g>
+</svg>

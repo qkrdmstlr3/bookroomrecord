@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      @keyframes first-line-ani {
+        0%, 20%, 60%, 100% {
+          transform: translate(17.5px, -30.3px);
+        }
+        40% {
+          transform: none;
+        }
+      }
+      @keyframes second-line-ani {
+        0%, 20%, 60%, 100% {
+          transform: translate(-17.5px, 30.3px);
+        }
+        40% {
+          transform: none;
+        }
+      }
+      @keyframes third-line-ani {
+        0%, 20%, 60%, 100% {
+          transform: translate(-17.5px, -30.3px);
+        }
+        40% {
+          transform: none;
+        }
+      }
+      @keyframes fourth-line-ani {
+        0%, 20%, 60%, 100% {
+          transform: translate(17.5px, 30.3px);
+        }
+        40% {
+          transform: none;
+        }
+      }
+      @keyframes fifth-line-ani {
+        0%, 20%, 60%, 100% {
+          transform: translate(-39px, 0);
+        }
+        40% {
+          transform: none;
+        }
+      }
+      @keyframes sixth-line-ani {
+        0%, 20%, 60%, 100% {
+          transform: translate(37px, 0);
+        }
+        40% {
+          transform: none;
+        }
+      }
+      #lens {
+        fill: transparent;
+        stroke: black;
+        stroke-width: 1px;
+      }
+      #first-line {
+        animation: first-line-ani 2s linear infinite;
+      }
+      #second-line {
+        animation: second-line-ani 2s linear infinite;
+      }
+      #third-line {
+        animation: third-line-ani 2s linear infinite;
+      }
+      #fourth-line {
+        animation: fourth-line-ani 2s linear infinite;
+      }
+      #fifth-line {
+        animation: fifth-line-ani 2s linear infinite;
+      }
+      #sixth-line {
+        animation: sixth-line-ani 2s linear infinite;
+      }
+    </style>
+    <mask id="lens-mask" maskUnits="userSpaceOnUse">
+      <circle fill="white" r="49" cx="50" cy="50" />
+    </mask>
+  </defs>
+  <circle id="lens" r="49" cx="50" cy="50" />
+  <g mask="url(#lens-mask)">
+    <path id="first-line" d='M -10 45.7 L 52.5 45.7' stroke="black" stroke-width="1px" />
+    <path id='second-line' d='M 47.5 54.3 L 110 54.3' stroke="black" stroke-width="1px" />
+
+    <path id='third-line' d='M 47.5 45.7 L 10 100' stroke="black" stroke-width="1px" />
+    <path id='fourth-line' d='M 52.5 54.3 L 87 0' stroke="black" stroke-width="1px" />
+
+    <path id='fifth-line' d='M 45 50 L 79.2 100' stroke="black" stroke-width="1px" />
+    <path id='sixth-line' d='M 55 50 L 23.7 0' stroke="black" stroke-width="1px" />
+  </g>
+</svg>
