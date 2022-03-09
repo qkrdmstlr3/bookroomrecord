@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import * as Style from './styled';
 import Icon from '../../UI/Icon';
+import Lens from '../../UI/Lens';
 import { PAGE_BOOKROOM_LOADING_SECOND } from '../../../common/variables';
 
 function BookroomTemplate() {
@@ -14,6 +15,7 @@ function BookroomTemplate() {
 
   return (
     <Style.Container isCursorNone={onGuard}>
+      <Lens src="" />
       {onGuard && (
         <Style.Guard>
           <Style.IconWrapper>

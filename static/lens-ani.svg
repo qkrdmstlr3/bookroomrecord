@@ -50,7 +50,7 @@
         }
       }
       #lens {
-        fill: transparent;
+        fill: white;
         stroke: black;
         stroke-width: 1px;
       }
