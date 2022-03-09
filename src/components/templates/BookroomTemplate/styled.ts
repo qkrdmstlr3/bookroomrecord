@@ -13,14 +13,14 @@ const guardAnim = keyframes`
 `;
 
 interface ContainerProps {
-  onCursor: boolean;
+  isCursorNone: boolean;
 }
 
 export const Container = styled.main<ContainerProps>`
   width: 100vw;
   height: 100vh;
   position: relative;
-  cursor: ${(props) => (props.onCursor ? 'initial' : 'none')};
+  cursor: ${(props) => (props.isCursorNone ? 'none' : 'initial')};
 `;
 
 export const Cursor = styled.div<CursorCoordinateType>`

@@ -13,7 +13,7 @@ function BookroomTemplate() {
   }, []);
 
   return (
-    <Style.Container onCursor={!onGuard}>
+    <Style.Container isCursorNone={onGuard}>
       {onGuard && (
         <Style.Guard>
           <Style.IconWrapper>
