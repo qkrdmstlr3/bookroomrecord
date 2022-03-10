@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
+import mq from '../../../style/mq';
 import { PAGE_MOVING_SECOND } from '../../../common/variables';
 import { CursorCoordinateType } from '../../../hooks/useCursor';
 
@@ -18,6 +19,10 @@ export const Container = styled.main`
   justify-content: space-between;
 
   cursor: none;
+
+  ${mq('md')} {
+    padding: 1rem;
+  }
 `;
 
 export const Title = styled.h1`
@@ -28,6 +33,10 @@ export const Title = styled.h1`
   letter-spacing: 20px;
   text-orientation: upright;
   font-family: 'Noto Serif KR', serif;
+
+  ${mq('md')} {
+    font-size: 5rem;
+  }
 `;
 
 export const Expression = styled.h2`
@@ -39,6 +48,11 @@ export const Expression = styled.h2`
   letter-spacing: 10px;
   text-orientation: upright;
   font-family: 'Noto Serif KR', serif;
+
+  ${mq('md')} {
+    font-size: 2rem;
+    letter-spacing: 6px;
+  }
 `;
 
 export const Cursor = styled.div<CursorCoordinateType>`
@@ -66,8 +80,12 @@ export const Circle = styled.div<CursorCoordinateType>`
 
 export const IconWrapper = styled.div`
   position: absolute;
-  width: 100px;
+  width: 10rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  ${mq('md')} {
+    width: 7rem;
+  }
 `;

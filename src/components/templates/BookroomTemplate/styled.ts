@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
+import mq from '../../../style/mq';
 import { PAGE_BOOKROOM_LOADING_SECOND } from '../../../common/variables';
 import { CursorCoordinateType } from '../../../hooks/useCursor';
 
@@ -53,7 +54,11 @@ export const Guard = styled.div`
 `;
 
 export const IconWrapper = styled.div`
-  width: 100px;
+  width: 10rem;
+
+  ${mq('md')} {
+    width: 7rem;
+  }
 `;
 
 export const LensWrapper = styled.div`
@@ -79,4 +84,8 @@ export const BookroomNameItem = styled.li<BookroomNameItemProps>`
   cursor: pointer;
 
   transition: all 0.5s linear;
+
+  ${mq('md')} {
+    font-size: 2rem;
+  }
 `;
