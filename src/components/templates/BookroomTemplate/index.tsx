@@ -3,6 +3,7 @@ import * as Style from './styled';
 import Icon from '../../UI/Icon';
 import Lens from '../../UI/Lens';
 import { PAGE_BOOKROOM_LOADING_SECOND } from '../../../common/variables';
+import BookroomCard from '../../UI/BookroomCard';
 
 export interface BookroomType {
   title: string;
@@ -16,7 +17,6 @@ interface BookroomTemplateProps {
   bookroomList: BookroomType[];
 }
 
-// TODO: bookroomList를 children으로 변경하기
 function BookroomTemplate({ bookroomList }: BookroomTemplateProps) {
   const [onGuard, setOnGuard] = useState<boolean>(true);
   const [selectedBookroom, setSelectedBookroom] = useState<BookroomType>();
@@ -39,7 +39,7 @@ function BookroomTemplate({ bookroomList }: BookroomTemplateProps) {
   return (
     <Style.Container isCursorNone={onGuard}>
       <Style.LensWrapper>
-        <Lens bookroom={selectedBookroom} />
+        <Lens>{selectedBookroom ? <BookroomCard bookroom={selectedBookroom} /> : <></>}</Lens>
       </Style.LensWrapper>
       <Style.BookroomNameList>
         {bookroomList.map(({ title }) => (
