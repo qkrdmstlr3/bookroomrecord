@@ -61,14 +61,13 @@ export const LensWrapper = styled.div`
 `;
 
 export const BookroomNameList = styled.ul`
-  padding: 0;
   margin: 0;
+  padding: 0 2rem;
   height: 10%;
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 100%;
-  overflow-x: scroll;
+  overflow: auto;
 `;
 
 export const BookroomNameItem = styled.li<BookroomNameItemProps>`
@@ -76,5 +75,6 @@ export const BookroomNameItem = styled.li<BookroomNameItemProps>`
   margin-bottom: ${(props) => (props.selected ? 2 : 0)}rem;
   font-size: 2.4rem;
   font-family: 'Noto Serif KR', serif;
+  flex: 0 0 auto;
   cursor: pointer;
 `;
