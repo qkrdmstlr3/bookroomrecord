@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { LENS_CAPTURE_SECOND } from '../../../common/variables';
+import { BookroomType } from '../../templates/BookroomTemplate';
 import BookroomImage from '../BookroomImage';
 import * as Style from './styled';
 
 interface LensProps {
-  src: string;
+  bookroom?: BookroomType;
 }
 
-function Lens({ src }: LensProps) {
+function Lens({ bookroom }: LensProps) {
   const [capture, setCapture] = useState(false);
 
   const timeoutEvent = () => setCapture(false);
@@ -15,13 +16,15 @@ function Lens({ src }: LensProps) {
   useEffect(() => {
     setCapture(true);
     setTimeout(timeoutEvent, LENS_CAPTURE_SECOND * 1000);
-  }, [src]);
+  }, [bookroom?.img]);
 
   return (
     <Style.Container>
-      <Style.ImgWrapper>
-        <BookroomImage src={src} />
-      </Style.ImgWrapper>
+      {bookroom && (
+        <Style.ImgWrapper>
+          <BookroomImage src={bookroom.img} />
+        </Style.ImgWrapper>
+      )}
       {capture ? <Style.LensAnim src="/lens-ani.svg" /> : <Style.Lens src="/lens.svg" />}
     </Style.Container>
   );
