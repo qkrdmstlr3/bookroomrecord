@@ -21,11 +21,15 @@ function Lens({ bookroom }: LensProps) {
   return (
     <Style.Container>
       {bookroom && (
-        <Style.ImgWrapper>
+        <Style.ContentWrapper>
+          <Style.Address>{bookroom.address}</Style.Address>
           <BookroomImage src={bookroom.img} />
-        </Style.ImgWrapper>
+          <Style.Date>{bookroom.date}</Style.Date>
+          <Style.Book>{bookroom.book}</Style.Book>
+        </Style.ContentWrapper>
       )}
-      {capture ? <Style.LensAnim src="/lens-ani.svg" /> : <Style.Lens src="/lens.svg" />}
+      {!capture && <Style.Lens src="/lens.svg" />}
+      {capture && <Style.LensAnim src="/lens-ani.svg" />}
     </Style.Container>
   );
 }

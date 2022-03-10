@@ -16,6 +16,7 @@ interface BookroomTemplateProps {
   bookroomList: BookroomType[];
 }
 
+// TODO: bookroomList를 children으로 변경하기
 function BookroomTemplate({ bookroomList }: BookroomTemplateProps) {
   const [onGuard, setOnGuard] = useState<boolean>(true);
   const [selectedBookroom, setSelectedBookroom] = useState<BookroomType>();
@@ -42,7 +43,11 @@ function BookroomTemplate({ bookroomList }: BookroomTemplateProps) {
       </Style.LensWrapper>
       <Style.BookroomNameList>
         {bookroomList.map(({ title }) => (
-          <Style.BookroomNameItem selected={title === selectedBookroom?.title} onClick={selectBookroom(title)}>
+          <Style.BookroomNameItem
+            key={title}
+            selected={title === selectedBookroom?.title}
+            onClick={selectBookroom(title)}
+          >
             {title}
           </Style.BookroomNameItem>
         ))}
