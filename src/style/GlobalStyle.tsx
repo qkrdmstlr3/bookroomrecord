@@ -5,6 +5,9 @@ function GlobalStyle() {
   return (
     <Global
       styles={css`
+        :root {
+          --vh: 100%;
+        }
         * {
           box-sizing: border-box;
           font-family: Roboto;

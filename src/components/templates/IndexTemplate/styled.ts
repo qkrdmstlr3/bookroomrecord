@@ -12,7 +12,7 @@ const circleAnim = keyframes`
 export const Container = styled.main`
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   padding: 3rem;
   display: flex;
   justify-content: space-between;

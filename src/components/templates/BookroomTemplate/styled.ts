@@ -22,7 +22,7 @@ interface BookroomNameItemProps {
 
 export const Container = styled.main<ContainerProps>`
   width: 100vw;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   position: relative;
   cursor: ${(props) => (props.isCursorNone ? 'none' : 'initial')};
 `;
@@ -42,7 +42,7 @@ export const Guard = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   display: flex;
   justify-content: center;
   align-items: center;
