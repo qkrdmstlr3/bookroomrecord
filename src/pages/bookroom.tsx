@@ -10,6 +10,8 @@ interface DataProps {
           title: string;
           date: string;
           img: string;
+          address: string;
+          book: string;
         };
       };
     }[];
@@ -31,6 +33,8 @@ export const query = graphql`
             title
             date
             img
+            address
+            book
           }
         }
       }

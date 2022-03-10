@@ -8,6 +8,8 @@ export interface BookroomType {
   title: string;
   date: string;
   img: string;
+  address: string;
+  book: string;
 }
 
 interface BookroomTemplateProps {
