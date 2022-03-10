@@ -5,7 +5,7 @@ import BookroomImage from '../BookroomImage';
 import * as Style from './styled';
 
 interface BookroomCardProps {
-  bookroom: BookroomType;
+  bookroom?: BookroomType;
 }
 
 /**
@@ -25,10 +25,16 @@ function BookroomCard({ bookroom }: BookroomCardProps) {
 
   return (
     <Style.Container>
-      <Style.Address>{lazyBookroom.address}</Style.Address>
-      <BookroomImage src={lazyBookroom.img} />
-      <Style.Date>{lazyBookroom.date}</Style.Date>
-      <Style.Book>{lazyBookroom.book}</Style.Book>
+      {lazyBookroom ? (
+        <>
+          <Style.Address>{lazyBookroom.address}</Style.Address>
+          <BookroomImage src={lazyBookroom.img} />
+          <Style.Date>{lazyBookroom.date}</Style.Date>
+          <Style.Book>{lazyBookroom.book}</Style.Book>
+        </>
+      ) : (
+        <Style.Title>책방록</Style.Title>
+      )}
     </Style.Container>
   );
 }

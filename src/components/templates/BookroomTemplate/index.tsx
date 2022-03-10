@@ -39,7 +39,9 @@ function BookroomTemplate({ bookroomList }: BookroomTemplateProps) {
   return (
     <Style.Container isCursorNone={onGuard}>
       <Style.LensWrapper>
-        <Lens>{selectedBookroom ? <BookroomCard bookroom={selectedBookroom} /> : <></>}</Lens>
+        <Lens>
+          <BookroomCard bookroom={selectedBookroom} />
+        </Lens>
       </Style.LensWrapper>
       <Style.BookroomNameList>
         {bookroomList.map(({ title }) => (

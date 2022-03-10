@@ -11,6 +11,11 @@ export const Container = styled.div`
   height: min(40vw, 40vh);
 `;
 
+export const Title = styled.h1`
+  font-size: 3rem;
+  font-family: 'Noto Serif KR', serif;
+`;
+
 export const Address = styled.h2`
   font-size: 2.4rem;
   font-family: 'Noto Serif KR', serif;
