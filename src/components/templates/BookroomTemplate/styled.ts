@@ -77,4 +77,6 @@ export const BookroomNameItem = styled.li<BookroomNameItemProps>`
   font-family: 'Noto Serif KR', serif;
   flex: 0 0 auto;
   cursor: pointer;
+
+  transition: all 0.5s linear;
 `;

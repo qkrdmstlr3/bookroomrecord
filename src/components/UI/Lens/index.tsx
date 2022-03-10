@@ -25,7 +25,7 @@ function Lens({ children }: LensProps) {
       <Style.ContentWrapper>{children}</Style.ContentWrapper>
       {capture && (
         <Style.LensWrapper>
-          <LensSVG anim={capture} />
+          <LensSVG anim />
         </Style.LensWrapper>
       )}
     </Style.Container>
