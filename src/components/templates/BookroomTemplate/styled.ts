@@ -16,6 +16,10 @@ interface ContainerProps {
   isCursorNone: boolean;
 }
 
+interface BookroomNameItemProps {
+  selected: boolean;
+}
+
 export const Container = styled.main<ContainerProps>`
   width: 100vw;
   height: 100vh;
@@ -50,4 +54,27 @@ export const Guard = styled.div`
 
 export const IconWrapper = styled.div`
   width: 100px;
+`;
+
+export const LensWrapper = styled.div`
+  height: 90%;
+`;
+
+export const BookroomNameList = styled.ul`
+  padding: 0;
+  margin: 0;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow-x: scroll;
+`;
+
+export const BookroomNameItem = styled.li<BookroomNameItemProps>`
+  margin: 0 1rem;
+  margin-bottom: ${(props) => (props.selected ? 2 : 0)}rem;
+  font-size: 2.4rem;
+  font-family: 'Noto Serif KR', serif;
+  cursor: pointer;
 `;

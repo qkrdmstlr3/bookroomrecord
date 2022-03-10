@@ -4,8 +4,19 @@ import Icon from '../../UI/Icon';
 import Lens from '../../UI/Lens';
 import { PAGE_BOOKROOM_LOADING_SECOND } from '../../../common/variables';
 
-function BookroomTemplate() {
+export interface BookroomType {
+  title: string;
+  date: string;
+  img: string;
+}
+
+interface BookroomTemplateProps {
+  bookroomList: BookroomType[];
+}
+
+function BookroomTemplate({ bookroomList }: BookroomTemplateProps) {
   const [onGuard, setOnGuard] = useState<boolean>(true);
+  const [selectedBookroom, setSelectedBookroom] = useState<BookroomType>();
 
   const removeGuard = () => setOnGuard(false);
 
@@ -13,9 +24,27 @@ function BookroomTemplate() {
     setTimeout(removeGuard, PAGE_BOOKROOM_LOADING_SECOND * 1000);
   }, []);
 
+  const selectBookroom = (selectedTitle: string) => () => {
+    if (selectedTitle === selectedBookroom?.title) {
+      setSelectedBookroom(undefined);
+      return;
+    }
+    const bookroom = bookroomList.find(({ title }) => title === selectedTitle);
+    setSelectedBookroom(bookroom);
+  };
+
   return (
     <Style.Container isCursorNone={onGuard}>
-      <Lens src="" />
+      <Style.LensWrapper>
+        <Lens bookroom={selectedBookroom} />
+      </Style.LensWrapper>
+      <Style.BookroomNameList>
+        {bookroomList.map(({ title }) => (
+          <Style.BookroomNameItem selected={title === selectedBookroom?.title} onClick={selectBookroom(title)}>
+            {title}
+          </Style.BookroomNameItem>
+        ))}
+      </Style.BookroomNameList>
       {onGuard && (
         <Style.Guard>
           <Style.IconWrapper>
@@ -23,7 +52,6 @@ function BookroomTemplate() {
           </Style.IconWrapper>
         </Style.Guard>
       )}
-      bookroom
     </Style.Container>
   );
 }

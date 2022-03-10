@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import BookroomTemplate from '../components/templates/BookroomTemplate';
 
-type DataProps = {
+interface DataProps {
   allMarkdownRemark: {
     edges: {
       node: {
@@ -14,11 +14,12 @@ type DataProps = {
       };
     }[];
   };
-};
+}
 
 function bookroom({ data }: PageProps<DataProps>) {
-  console.log(data.allMarkdownRemark.edges.map((edge) => edge.node.frontmatter));
-  return <BookroomTemplate />;
+  const bookroomList = data.allMarkdownRemark.edges.map((edge) => edge.node.frontmatter);
+
+  return <BookroomTemplate bookroomList={bookroomList} />;
 }
 
 export const query = graphql`
