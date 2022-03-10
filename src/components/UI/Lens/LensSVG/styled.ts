@@ -6,33 +6,33 @@ interface LineProps {
 }
 
 const firstLineAnim = keyframes`
-  0%, 20%, 100% { transform: translate(17.5px, -30.3px); }
-  40%, 80% { transform: none; }
+  0%, 30%, 100% { transform: translate(17.5px, -30.3px); }
+  50%, 70% { transform: none; }
 `;
 
 const secondLineAnim = keyframes`
-  0%, 20%, 100% { transform: translate(-17.5px, 30.3px); }
-  40%, 80% { transform: none; }
+  0%, 30%, 100% { transform: translate(-17.8px, 30.3px); }
+  50%, 70% { transform: none; }
 `;
 
 const thirdLineAnim = keyframes`
-  0%, 20%, 100% { transform: translate(-17.5px, -30.3px); }
-  40%, 80% { transform: none; }
+  0%, 30%, 100% { transform: translate(-17.5px, -30.3px); }
+  50%, 70% { transform: none; }
 `;
 
 const fourthLineAnim = keyframes`
-  0%, 20%, 100% { transform: translate(17.5px, 30.3px); }
-  40%, 80% { transform: none; }
+  0%, 30%, 100% { transform: translate(17.5px, 30.3px); }
+  50%, 70% { transform: none; }
 `;
 
 const fifthLineAnim = keyframes`
-  0%, 20%, 100% { transform: translate(-39px, 0); }
-  40%, 80% { transform: none; }
+  0%, 30%, 100% { transform: translate(-39px, 0); }
+  50%, 70% { transform: none; }
 `;
 
 const sixthLineAnim = keyframes`
-  0%, 20%, 100% { transform: translate(37px, 0); }
-  40%, 80% { transform: none; }
+  0%, 30%, 100% { transform: translate(37px, 0); }
+  50%, 70% { transform: none; }
 `;
 
 export const SVG = styled.svg`
@@ -57,7 +57,7 @@ export const FirstLine = styled.path<LineProps>`
 `;
 
 export const SecondLine = styled.path<LineProps>`
-  transform: translate(-17.5px, 30.3px);
+  transform: translate(-17.8px, 30.3px);
   animation: ${(prosp) =>
     prosp.anim
       ? css`
