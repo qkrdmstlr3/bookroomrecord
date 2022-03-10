@@ -3,11 +3,13 @@ import { LENS_CAPTURE_SECOND } from '../../../common/variables';
 import { BookroomType } from '../../templates/BookroomTemplate';
 import BookroomImage from '../BookroomImage';
 import * as Style from './styled';
+import LensSVG from './LensSVG/index';
 
 interface LensProps {
   bookroom?: BookroomType;
 }
 
+// TODO: bookroom을 children으로 변경하기
 function Lens({ bookroom }: LensProps) {
   const [capture, setCapture] = useState(false);
 
@@ -20,6 +22,9 @@ function Lens({ bookroom }: LensProps) {
 
   return (
     <Style.Container>
+      <Style.LensWrapper>
+        <LensSVG anim={false} />
+      </Style.LensWrapper>
       {bookroom && (
         <Style.ContentWrapper>
           <Style.Address>{bookroom.address}</Style.Address>
@@ -28,8 +33,11 @@ function Lens({ bookroom }: LensProps) {
           <Style.Book>{bookroom.book}</Style.Book>
         </Style.ContentWrapper>
       )}
-      {!capture && <Style.Lens src="/lens.svg" />}
-      {capture && <Style.LensAnim src="/lens-ani.svg" />}
+      {capture && (
+        <Style.LensWrapper>
+          <LensSVG anim={capture} />
+        </Style.LensWrapper>
+      )}
     </Style.Container>
   );
 }
