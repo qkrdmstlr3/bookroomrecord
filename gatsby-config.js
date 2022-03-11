@@ -17,5 +17,14 @@ module.exports = {
         path: `${__dirname}/bookroom`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: '책방록',
+        short_name: '책방록',
+        start_url: '/',
+        icon: 'static/logo.svg',
+      },
+    },
   ],
 };
