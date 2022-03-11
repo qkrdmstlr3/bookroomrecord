@@ -63,6 +63,7 @@ export const IconWrapper = styled.div`
 
 export const LensWrapper = styled.div`
   height: 90%;
+  background-color: black;
 `;
 
 export const BookroomNameList = styled.ul`
